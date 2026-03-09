@@ -118,6 +118,9 @@ async def save_message_to_db(room_id: str, sender_id: str, message_text: str):
         # Re-raise so the caller can catch it and print context
         raise e
 
-if __name__ == "__main__":
+def main():
     import uvicorn
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+
+if __name__ == "__main__":
+    main()

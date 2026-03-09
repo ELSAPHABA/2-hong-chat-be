@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "2-hong-chat-be"
+version = "0.1.0"
+description = "FastAPI, Redis Pub/Sub, MongoDB를 활용한 실시간 1:1 채팅 서버"
+authors = ["ELSAPHABA <sb07907@naver.com>"]
+license = "AGPL-3.0-or-later"
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.110.0"
+uvicorn = {extras = ["standard"], version = "^0.27.0"}
+motor = "^3.3.2"
+redis = "^5.0.1"
+pydantic-settings = "^2.2.1"
+pydantic = "^2.6.3"
+bson = "^0.5.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+httpx = "^0.27.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "app.main:main"
